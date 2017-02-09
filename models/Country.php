@@ -1,22 +1,48 @@
 <?php
+
 namespace app\models;
 
 use Yii;
-use yii\db\ActiveRecord;
 
 /**
- * Country继承自活动记录类的类 ActiveRecord， 把它放在 models/Country.php 文件，去代表和读取 country 表的数据。
+ * This is the model class for table "country".
+ *
+ * @property string $code
+ * @property string $name
+ * @property integer $population
  */
-class Country extends ActiveRecord {
+class Country extends \yii\db\ActiveRecord
+{
     /**
-     * 创建验证规则
-     * 
-     * @return array
+     * @inheritdoc
      */
-    public function rules() {
+    public static function tableName()
+    {
+        return 'country';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
         return [
-            [['name', 'email'], 'required'],
-            ['email', 'email']
+            [['code', 'name'], 'required'],
+            [['population'], 'integer'],
+            [['code'], 'string', 'max' => 2],
+            [['name'], 'string', 'max' => 52],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'code' => 'Code',
+            'name' => 'Name',
+            'population' => 'Population',
         ];
     }
 }
