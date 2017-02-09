@@ -122,4 +122,13 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+    
+    /**
+     * 创建操作say(say hello)
+     * 
+     * @return string
+     */
+    public function actionSay($message = 'hello') {
+        return $this->render('say', ['message' => $message]);
+    }
 }
