@@ -52,9 +52,12 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+            'helloworld' => [   //添加独立操作
+                'class' => 'app\components\HelloWorldAction',
+            ],
         ];
     }
-
+    
     /**
      * Displays homepage.
      *
