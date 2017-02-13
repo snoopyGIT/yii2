@@ -48,6 +48,23 @@ $config = [
         */
     ],
     'params' => $params,
+    'aliases' => [  //定义别名
+        //'@app' => dirname(__DIR__),
+    ],
+    'catchAll' => [ //它指定一个要处理所有用户请求的 控制器方法， 通常在维护模式下使用，同一个方法处理所有用户请求。(所有用户请求将跳转到site/say这个控制方法中)
+//         'site/say',
+//         'message' => '网站维护...',
+    ],
+    'controllerMap' => [    //指定一个控制器ID(testsite)到控制器类SiteController
+        'testsite' => 'app\controllers\SiteController',
+//         'article' => [
+//             'class' => 'app\controllers\PostController',
+//             'enableCsrfValidation' => false,
+//         ],
+    ],
+    'language' => 'zh-CN',  //指定应用展示给终端用户的语言， 默认为 en 标识英文
+    'sourceLanguage' => 'zh-CN',    //指定应用代码的语言，默认为 'en-US' 标识英文（美国）， 如果应用不是英文请修改该属性
+    'timeZone' => 'PRC',    //指定时区
 ];
 
 if (YII_ENV_DEV) {
