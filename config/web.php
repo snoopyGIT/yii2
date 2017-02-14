@@ -65,6 +65,11 @@ $config = [
     'language' => 'zh-CN',  //指定应用展示给终端用户的语言， 默认为 en 标识英文
     'sourceLanguage' => 'zh-CN',    //指定应用代码的语言，默认为 'en-US' 标识英文（美国）， 如果应用不是英文请修改该属性
     'timeZone' => 'PRC',    //指定时区
+    'modules' => [
+        'english' => [
+            'class' => 'app\modules\english\English'
+        ]
+    ]
 ];
 
 if (YII_ENV_DEV) {
