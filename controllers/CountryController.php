@@ -14,6 +14,9 @@ use yii\filters\VerbFilter;
  */
 class CountryController extends Controller
 {
+    public $_title = '拉取方式读取控制器';
+    public $layout = 'main';    //改变布局文件
+    
     /**
      * @inheritdoc
      */
@@ -27,6 +30,12 @@ class CountryController extends Controller
                 ],
             ],
         ];
+    }
+    
+    public function getViewPath() { //覆盖控制器或小部件的 yii\base\ViewContextInterface::getViewPath() 方法来自定义视图文件默认目录
+        $viewPath = parent::getViewPath();
+        //return dirname($viewPath) .DIRECTORY_SEPARATOR. 'site';
+        return $viewPath;
     }
 
     /**
