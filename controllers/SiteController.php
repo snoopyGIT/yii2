@@ -155,4 +155,13 @@ class SiteController extends Controller
             return $this->render('entry', ['model' => $model]);
         }
     }
+    
+    /**
+     * 创建操作actionWidget(使用小部件)
+     *
+     * @return string
+     */
+    public function actionWidget() {
+        return $this->render('widget');
+    }
 }
